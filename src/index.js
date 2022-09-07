@@ -7,6 +7,12 @@ const baseUrl = "https://platzi-avo.vercel.app";
 
 const appNode = document.querySelector("#app");
 
+appNode.addEventListener('click', (event) => {
+  if(event.target.nodeName === 'H2') {
+    window.alert('clicked')
+  }
+})
+
 const formatPrice = (price) => {
 
   const newPrice = new window.Intl.NumberFormat('en-EN', {
@@ -36,6 +42,7 @@ async function fetchData() {
       const title = document.createElement('h2')
       title.textContent = element.name;
       title.className= 'text-2xl text-lime-700 place-self-center'
+      
 
       const price = document.createElement('div')
       price.textContent = formatPrice(element.price);
